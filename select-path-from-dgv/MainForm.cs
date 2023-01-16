@@ -1,4 +1,6 @@
 using System.ComponentModel;
+using System.Diagnostics;
+using System.IO;
 
 namespace select_picture_from_dgv
 {
@@ -7,7 +9,7 @@ namespace select_picture_from_dgv
         public MainForm()
         {
             InitializeComponent();
-            Card.ImageBase = 
+            Card.ImageBaseFolder = 
                 Path.Combine(
                     AppDomain.CurrentDomain.BaseDirectory,
                     "Images",
@@ -58,7 +60,8 @@ namespace select_picture_from_dgv
             if (dataGridViewCards.Columns[e.ColumnIndex].Name.Equals("Open"))
             {
                 var card = Cards[e.RowIndex];
-                card.Image = card.GetCardImage();
+                var path = card.GetFullPath();
+                Process.Start("explorer.exe", path);
             }
         }
     }
@@ -72,7 +75,6 @@ namespace select_picture_from_dgv
             Suit = suit ?? (Suit)-1;
             Image = GetCardImage();
         }
-        internal static string ImageBase { get; set; }
         public string Name => $"{Value} of {Suit}";
         public string FilePath
         {
@@ -90,6 +92,8 @@ namespace select_picture_from_dgv
                 }
             }
         }
+        internal static string ImageBaseFolder { get; set; } = string.Empty;
+        public string GetFullPath() => Path.Combine(ImageBaseFolder, FilePath);
 
         [Browsable(false)]
         public Value Value { get; internal set; }
@@ -120,7 +124,7 @@ namespace select_picture_from_dgv
                 return localToImage($"cardBack_green3.png");
             }
             Image localToImage(string shortFileName) => 
-                Image.FromFile(Path.Combine(ImageBase, shortFileName));
+                Image.FromFile(Path.Combine(ImageBaseFolder, shortFileName));
         }
     }
 }
