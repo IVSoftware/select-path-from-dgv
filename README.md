@@ -10,8 +10,8 @@ There might be a simple solution to avoiding the exception. Try this syntax for 
 
 Since it's hard to say exactly where the problem might be, I will also offer a comprehensive answer to your questions.
 
-[![enter image description here][1]][1]
-
+[![screenshot][1]][1]
+**Playing card images credit:** [Boardgame pack v2](https://opengameart.org/content/boardgame-pack) (Creative Commons License) by Kenney Vleugels.
 ***
 **Locating files**
 
@@ -27,7 +27,7 @@ If the files are part of the install (known at compile time), they can be reliab
             "shortFileName.png" // Example filename
         );
 
-[![enter image description here][2]][2]
+[![copy-if-newer][2]][2]
 
         
 On the other hand, if they can be modified by the user, they belong in 
@@ -46,7 +46,7 @@ On the other hand, if they can be modified by the user, they belong in
 ***
 **Define row behavior**
 
-In order to _"make each row a [...] something"_ requires a class that has public properties corresponding to the columns in the DataGridView. This class will be wound to the `DataSource` property of the DataGridView, for example by making a `BindingList<Card>` Here's a minimal example:
+In order to _"make each row a [...] something"_ requires a class that has public properties corresponding to the columns in the DataGridView. This class will be bound to the `DataSource` property of the DataGridView, for example by making a `BindingList<Card>`. Here's a minimal example:
 
     class Card
     {
@@ -115,10 +115,10 @@ In this sample a DataGridView control gets initialized in the method that loads 
             dataGridViewCards.CellContentClick += onAnyCellContentClick;
         }
 
-
+***
 **Make a button open a file path on the same row**
 
-        In the handler, retrieve the card from the bound collection by index and get the full path. You may have better luck with the `Process.Start` if you use the syntax shown:
+In the handler, retrieve the card from the bound collection by index and get the full path. You may have better luck with the `Process.Start` if you use the syntax shown:
 
         private void onAnyCellContentClick(object? sender, DataGridViewCellEventArgs e)
         {
@@ -132,5 +132,5 @@ In this sample a DataGridView control gets initialized in the method that loads 
     }
 
 
-  [1]: https://i.stack.imgur.com/9iBv0.png
+  [1]: https://i.stack.imgur.com/IY1yf.png
   [2]: https://i.stack.imgur.com/EjQ3l.png
