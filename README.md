@@ -46,7 +46,7 @@ On the other hand, if they can be modified by the user, they belong in
 ***
 **Define row behavior**
 
-In order to _"make each row a [...] something" requires a class that has public properties corresponding to the columns in the DataGridView. This class will be wound to the `DataSource` property of the DataGridView, for example by making a `BindingList<Card>` Here's a minimal example:
+In order to _"make each row a [...] something"_ requires a class that has public properties corresponding to the columns in the DataGridView. This class will be wound to the `DataSource` property of the DataGridView, for example by making a `BindingList<Card>` Here's a minimal example:
 
     class Card
     {
