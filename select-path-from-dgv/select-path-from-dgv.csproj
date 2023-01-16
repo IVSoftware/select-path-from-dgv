@@ -10,8 +10,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\boardgamePack_v2\PNG\Cards\cardBack_blue1.png" />
+    <None Remove="Images\boardgamePack_v2\PNG\Cards\cardBack_blue2.png" />
     <None Remove="Images\boardgamePack_v2\PNG\Cards\cardBack_blue3.png" />
+    <None Remove="Images\boardgamePack_v2\PNG\Cards\cardBack_blue4.png" />
+    <None Remove="Images\boardgamePack_v2\PNG\Cards\cardBack_blue5.png" />
+    <None Remove="Images\boardgamePack_v2\PNG\Cards\cardBack_green1.png" />
+    <None Remove="Images\boardgamePack_v2\PNG\Cards\cardBack_green2.png" />
     <None Remove="Images\boardgamePack_v2\PNG\Cards\cardBack_green3.png" />
+    <None Remove="Images\boardgamePack_v2\PNG\Cards\cardBack_green4.png" />
+    <None Remove="Images\boardgamePack_v2\PNG\Cards\cardBack_green5.png" />
+    <None Remove="Images\boardgamePack_v2\PNG\Cards\cardBack_red1.png" />
+    <None Remove="Images\boardgamePack_v2\PNG\Cards\cardBack_red2.png" />
+    <None Remove="Images\boardgamePack_v2\PNG\Cards\cardBack_red3.png" />
+    <None Remove="Images\boardgamePack_v2\PNG\Cards\cardBack_red4.png" />
+    <None Remove="Images\boardgamePack_v2\PNG\Cards\cardBack_red5.png" />
     <None Remove="Images\boardgamePack_v2\PNG\Cards\cardClubs10.png" />
     <None Remove="Images\boardgamePack_v2\PNG\Cards\cardClubs2.png" />
     <None Remove="Images\boardgamePack_v2\PNG\Cards\cardClubs3.png" />
@@ -68,61 +81,213 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardBack_blue3.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardBack_green3.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardClubs10.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardClubs2.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardClubs3.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardClubs4.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardClubs5.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardClubs6.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardClubs7.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardClubs8.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardClubs9.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardClubsA.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardClubsJ.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardClubsK.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardClubsQ.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardDiamonds10.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardDiamonds2.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardDiamonds3.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardDiamonds4.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardDiamonds5.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardDiamonds6.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardDiamonds7.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardDiamonds8.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardDiamonds9.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardDiamondsA.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardDiamondsJ.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardDiamondsK.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardDiamondsQ.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardHearts10.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardHearts2.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardHearts3.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardHearts4.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardHearts5.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardHearts6.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardHearts7.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardHearts8.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardHearts9.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardHeartsA.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardHeartsJ.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardHeartsK.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardHeartsQ.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardJoker.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardSpades10.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardSpades2.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardSpades3.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardSpades4.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardSpades5.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardSpades6.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardSpades7.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardSpades8.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardSpades9.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardSpadesA.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardSpadesJ.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardSpadesK.png" />
-    <EmbeddedResource Include="Images\boardgamePack_v2\PNG\Cards\cardSpadesQ.png" />
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardBack_blue1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardBack_blue2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardBack_blue3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardBack_blue4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardBack_blue5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardBack_green1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardBack_green2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardBack_green3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardBack_green4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardBack_green5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardBack_red1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardBack_red2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardBack_red3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardBack_red4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardBack_red5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardClubs10.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardClubs2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardClubs3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardClubs4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardClubs5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardClubs6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardClubs7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardClubs8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardClubs9.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardClubsA.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardClubsJ.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardClubsK.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardClubsQ.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardDiamonds10.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardDiamonds2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardDiamonds3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardDiamonds4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardDiamonds5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardDiamonds6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardDiamonds7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardDiamonds8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardDiamonds9.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardDiamondsA.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardDiamondsJ.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardDiamondsK.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardDiamondsQ.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardHearts10.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardHearts2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardHearts3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardHearts4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardHearts5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardHearts6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardHearts7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardHearts8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardHearts9.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardHeartsA.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardHeartsJ.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardHeartsK.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardHeartsQ.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardJoker.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardSpades10.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardSpades2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardSpades3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardSpades4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardSpades5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardSpades6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardSpades7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardSpades8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardSpades9.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardSpadesA.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardSpadesJ.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardSpadesK.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\boardgamePack_v2\PNG\Cards\cardSpadesQ.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

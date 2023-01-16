@@ -4,7 +4,18 @@ namespace select_picture_from_dgv
 {
     public partial class MainForm : Form
     {
-        public MainForm() => InitializeComponent();
+        public MainForm()
+        {
+            InitializeComponent();
+            Card.ImageBase = 
+                Path.Combine(
+                    AppDomain.CurrentDomain.BaseDirectory,
+                    "Images",
+                    "boardgamePack_v2",
+                    "PNG",
+                    "Cards"
+                );
+        }
         internal BindingList<Card> Cards { get; } = new BindingList<Card>();
         protected override void OnLoad(EventArgs e)
         {
@@ -32,11 +43,11 @@ namespace select_picture_from_dgv
             #endregion F O R M A T    C O L U M N S
 
             // Add a few cards
-            Cards.Add(new Card { Value = Value.Ten, Suit = Suit.Diamonds });
-            Cards.Add(new Card { Value = Value.Jack, Suit = Suit.Clubs });
-            Cards.Add(new Card { Value = Value.Queen, Suit = Suit.Hearts });
-            Cards.Add(new Card { Value = Value.King, Suit = Suit.Spades });
-            Cards.Add(new Card { Value = Value.Ace, Suit = Suit.Diamonds });
+            Cards.Add(new Card(Value.Ten, Suit.Diamonds));
+            Cards.Add(new Card(Value.Jack, Suit.Clubs));
+            Cards.Add(new Card(Value.Queen, Suit.Diamonds));
+            Cards.Add(new Card(Value.King, Suit.Clubs));
+            Cards.Add(new Card(Value.Ace, Suit.Hearts));
 
             dataGridViewCards.ClearSelection();
             dataGridViewCards.CellContentClick += onAnyCellContentClick;
@@ -53,9 +64,15 @@ namespace select_picture_from_dgv
     }
     enum Value { Joker, Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Back }
     enum Suit { Clubs, Diamonds, Hearts, Spades, }
-    class Card : INotifyPropertyChanged
+    class Card
     {
-        public Card() => Image = GetCardImage(faceUp: false);
+        public Card(Value value = Value.Back, Suit? suit = null)
+        {
+            Value = value;
+            Suit = suit ?? (Suit)-1;
+            Image = GetCardImage();
+        }
+        internal static string ImageBase { get; set; }
         public string Name => $"{Value} of {Suit}";
         public string FilePath
         {
@@ -79,50 +96,31 @@ namespace select_picture_from_dgv
 
         [Browsable(false)]
         public Suit Suit { get; internal set; }
-        Image? _image = null;
-        public Image Image
-        {
-            get => _image;
-            set
-            {
-                if (!Equals(_image, value))
-                {
-                    _image = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Image)));
-                }
-            }
-        }
+        public Image Image { get; set; }
 
         public Image GetCardImage(bool faceUp = true)
         {
-            string _imageBase = $"{GetType().Namespace}.Images.boardgamePack_v2.PNG.Cards";
             if (faceUp)
             {
                 switch (Value)
                 {
-                    case Value.Ace: return localToImage($"{_imageBase}.card{Suit}A.png");
-                    case Value.Jack: return localToImage($"{_imageBase}.card{Suit}J.png");
-                    case Value.Queen: return localToImage($"{_imageBase}.card{Suit}Q.png");
-                    case Value.King: return localToImage($"{_imageBase}.card{Suit}K.png");
-                    case Value.Joker: return localToImage($"{_imageBase}.cardJoker.png");
+                    case Value.Ace: return localToImage($"card{Suit}A.png");
+                    case Value.Jack: return localToImage($"card{Suit}J.png");
+                    case Value.Queen: return localToImage($"card{Suit}Q.png");
+                    case Value.King: return localToImage($"card{Suit}K.png");
+                    case Value.Joker: return localToImage($"cardJoker.png");
                     case Value.Back:
-                        return localToImage($"{_imageBase}.cardBack_green3.png");
+                        return localToImage($"cardBack_green3.png");
                     default:
-                        return localToImage($"{_imageBase}.card{Suit}{(int)Value}.png");
+                        return localToImage($"card{Suit}{(int)Value}.png");
                 }
             }
             else
             {
-                return localToImage($"{_imageBase}.cardBack_green3.png");
+                return localToImage($"cardBack_green3.png");
             }
-            Image localToImage(string resource)
-            {
-                using (var stream = GetType().Assembly.GetManifestResourceStream(resource)!)
-                {
-                    return new Bitmap(stream);
-                }
-            }
+            Image localToImage(string shortFileName) => 
+                Image.FromFile(Path.Combine(ImageBase, shortFileName));
         }
-        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }
