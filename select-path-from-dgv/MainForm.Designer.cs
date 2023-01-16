@@ -29,44 +29,29 @@
         private void InitializeComponent()
         {
             this.dataGridViewCards = new System.Windows.Forms.DataGridView();
-            this.pictureBoxCard = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCards)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCard)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewCards
             // 
-            this.dataGridViewCards.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewCards.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCards.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewCards.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewCards.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewCards.Name = "dataGridViewCards";
             this.dataGridViewCards.RowHeadersWidth = 62;
             this.dataGridViewCards.RowTemplate.Height = 33;
-            this.dataGridViewCards.Size = new System.Drawing.Size(600, 325);
+            this.dataGridViewCards.Size = new System.Drawing.Size(659, 344);
             this.dataGridViewCards.TabIndex = 0;
-            // 
-            // pictureBoxCard
-            // 
-            this.pictureBoxCard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxCard.Location = new System.Drawing.Point(626, 12);
-            this.pictureBoxCard.Name = "pictureBoxCard";
-            this.pictureBoxCard.Size = new System.Drawing.Size(140, 190);
-            this.pictureBoxCard.TabIndex = 1;
-            this.pictureBoxCard.TabStop = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 344);
-            this.Controls.Add(this.pictureBoxCard);
+            this.ClientSize = new System.Drawing.Size(659, 344);
             this.Controls.Add(this.dataGridViewCards);
             this.Name = "MainForm";
             this.Text = "MainForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCards)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCard)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -74,6 +59,5 @@
         #endregion
 
         private DataGridView dataGridViewCards;
-        private PictureBox pictureBoxCard;
     }
 }

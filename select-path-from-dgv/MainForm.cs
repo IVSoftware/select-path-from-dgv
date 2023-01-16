@@ -13,6 +13,7 @@ namespace select_picture_from_dgv
             dataGridViewCards.RowHeadersVisible = false;
             dataGridViewCards.DataSource = Cards;
             dataGridViewCards.RowTemplate.Height = 100;
+
             #region F O R M A T    C O L U M N S
             Cards.Add(new Card()); // <- Auto generate columns
             dataGridViewCards.Columns["Name"].AutoSizeMode= DataGridViewAutoSizeColumnMode.Fill;
@@ -20,16 +21,13 @@ namespace select_picture_from_dgv
             DataGridViewImageColumn imageColumn = (DataGridViewImageColumn) dataGridViewCards.Columns["Image"];
             imageColumn.AutoSizeMode= DataGridViewAutoSizeColumnMode.Fill;
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            imageColumn.Width = 50;
+            imageColumn.Width = 100;
             imageColumn.HeaderText = string.Empty;
             dataGridViewCards.Columns.Insert(2, new DataGridViewButtonColumn
             {
+                Name = "Open",
                 HeaderText = "Open",
             });
-            //dataGridViewCards.Columns.Add(new DataGridViewImageColumn
-            //{
-            //    HeaderText = "Image",
-            //});
             Cards.Clear();
             #endregion F O R M A T    C O L U M N S
 
@@ -41,32 +39,23 @@ namespace select_picture_from_dgv
             Cards.Add(new Card { Value = Value.Ace, Suit = Suit.Diamonds });
 
             dataGridViewCards.ClearSelection();
-            //dataGridViewCards.SelectionChanged += onSelectionChanged;
-            //dataGridViewCards.CurrentCellChanged += onSelectionChanged;
-            //pictureBoxCard.Click += (sender, e) => dataGridViewCards.CurrentCell = null;
+            dataGridViewCards.CellContentClick += onAnyCellContentClick;
         }
-        //private void onSelectionChanged(object? sender, EventArgs e)
-        //{
-        //    if (dataGridViewCards.CurrentCell == null)
-        //    {
-        //        pictureBoxCard.Image = getCardImage(Value.Back);
-        //    }
-        //    else
-        //    {
-        //        int row = dataGridViewCards.CurrentCell.RowIndex;
-        //        if((row != -1) && (row < Cards.Count)) 
-        //        {
-        //            Card card = Cards[row];
-        //            pictureBoxCard.Image = getCardImage(card);
-        //        }
-        //    }
-        //}
+
+        private void onAnyCellContentClick(object? sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewCards.Columns[e.ColumnIndex].Name.Equals("Open"))
+            {
+                var card = Cards[e.RowIndex];
+                card.Image = card.GetCardImage();
+            }
+        }
     }
     enum Value { Joker, Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Back }
     enum Suit { Clubs, Diamonds, Hearts, Spades, }
-    class Card
+    class Card : INotifyPropertyChanged
     {
-        public Card() => Image = getCardImage(Value.Back);
+        public Card() => Image = GetCardImage(faceUp: false);
         public string Name => $"{Value} of {Suit}";
         public string FilePath
         {
@@ -74,20 +63,13 @@ namespace select_picture_from_dgv
             {
                 switch (Value)
                 {
-                    case Value.Ace:
-                        return $"card{Suit}A.png";
-                    case Value.Jack:
-                        return $"card{Suit}J.png";
-                    case Value.Queen:
-                        return $"card{Suit}Q.png";
-                    case Value.King:
-                        return $"card{Suit}K.png";
-                    case Value.Joker:
-                        return $"cardJoker.png";
-                    case Value.Back:
-                        return $"cardBack_green3.png";
-                    default:
-                        return $"card{Suit}{(int)Value}.png";
+                    case Value.Ace: return $"card{Suit}A.png";
+                    case Value.Jack: return $"card{Suit}J.png";
+                    case Value.Queen: return $"card{Suit}Q.png";
+                    case Value.King: return $"card{Suit}K.png";
+                    case Value.Joker: return $"cardJoker.png";
+                    case Value.Back: return $"cardBack_green3.png";
+                    default: return $"card{Suit}{(int)Value}.png";
                 }
             }
         }
@@ -97,29 +79,43 @@ namespace select_picture_from_dgv
 
         [Browsable(false)]
         public Suit Suit { get; internal set; }
+        Image? _image = null;
+        public Image Image
+        {
+            get => _image;
+            set
+            {
+                if (!Equals(_image, value))
+                {
+                    _image = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Image)));
+                }
+            }
+        }
 
-        public Image Image {get; set; }
-        public Image getCardImage(Value value = Value.Joker, Suit? suit = null)
+        public Image GetCardImage(bool faceUp = true)
         {
             string _imageBase = $"{GetType().Namespace}.Images.boardgamePack_v2.PNG.Cards";
-            switch (value)
+            if (faceUp)
             {
-                case Value.Ace:
-                    return localImageFromResourceName($"{_imageBase}.card{suit}A.png");
-                case Value.Jack:
-                    return localImageFromResourceName($"{_imageBase}.card{suit}J.png");
-                case Value.Queen:
-                    return localImageFromResourceName($"{_imageBase}.card{suit}Q.png");
-                case Value.King:
-                    return localImageFromResourceName($"{_imageBase}.card{suit}K.png");
-                case Value.Joker:
-                    return localImageFromResourceName($"{_imageBase}.cardJoker.png");
-                case Value.Back:
-                    return localImageFromResourceName($"{_imageBase}.cardBack_green3.png");
-                default:
-                    return localImageFromResourceName($"{_imageBase}.card{suit}{(int)value}.png");
+                switch (Value)
+                {
+                    case Value.Ace: return localToImage($"{_imageBase}.card{Suit}A.png");
+                    case Value.Jack: return localToImage($"{_imageBase}.card{Suit}J.png");
+                    case Value.Queen: return localToImage($"{_imageBase}.card{Suit}Q.png");
+                    case Value.King: return localToImage($"{_imageBase}.card{Suit}K.png");
+                    case Value.Joker: return localToImage($"{_imageBase}.cardJoker.png");
+                    case Value.Back:
+                        return localToImage($"{_imageBase}.cardBack_green3.png");
+                    default:
+                        return localToImage($"{_imageBase}.card{Suit}{(int)Value}.png");
+                }
             }
-            Image localImageFromResourceName(string resource)
+            else
+            {
+                return localToImage($"{_imageBase}.cardBack_green3.png");
+            }
+            Image localToImage(string resource)
             {
                 using (var stream = GetType().Assembly.GetManifestResourceStream(resource)!)
                 {
@@ -127,5 +123,6 @@ namespace select_picture_from_dgv
                 }
             }
         }
+        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }
