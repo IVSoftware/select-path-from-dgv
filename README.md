@@ -88,7 +88,6 @@ In this sample a DataGridView control gets initialized in the method that loads 
             dataGridViewCards.Columns["Name"].AutoSizeMode= DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCards.Columns["FilePath"].AutoSizeMode= DataGridViewAutoSizeColumnMode.Fill;
             DataGridViewImageColumn imageColumn = (DataGridViewImageColumn) dataGridViewCards.Columns["Image"];
-            imageColumn.AutoSizeMode= DataGridViewAutoSizeColumnMode.Fill;
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
             imageColumn.Width = 100;
             imageColumn.HeaderText = string.Empty;

@@ -33,7 +33,6 @@ namespace select_picture_from_dgv
             dataGridViewCards.Columns["FilePath"].AutoSizeMode= DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCards.Columns["FilePath"].HeaderText = "File Path";
             DataGridViewImageColumn imageColumn = (DataGridViewImageColumn) dataGridViewCards.Columns["Image"];
-            imageColumn.AutoSizeMode= DataGridViewAutoSizeColumnMode.Fill;
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
             imageColumn.Width = 100;
             imageColumn.HeaderText = string.Empty;
